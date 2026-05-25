@@ -63,11 +63,6 @@ class RNNModel(nn.Module):
         out=self.fc(out[:,-1,:])
         return out
 
-model = RNNModel()
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = model.to(device)
-
-
 criterion = nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(),lr=0.001)
 
